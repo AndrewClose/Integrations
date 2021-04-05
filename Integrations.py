@@ -16,7 +16,7 @@ webdriver_path = r'/Users/andrewclose/bin/chromedriver'
 
 # This is the URL for the list of integrations maintained on SourceForge. 
 
-# Sometimes the SourceForge server won’t serve up the next page and quits.
+# Sometimes the SourceForge server won’t serve up the next page and quits with no indication.
 # This program support a restart option to create a URL as per the following example: 
 # https://sourceforge.net/software/product/Slack/integrations/?page=47
 # The output file is opened in append mode to pick up where the last run stopped.
@@ -32,7 +32,7 @@ if vendor == "S":
 else:
     url ="https://sourceforge.net/software/product/Microsoft-Teams/integrations/"
     
-restart = input("Do you want to restart at a certain page? (Y/N) ").upper()  
+restart = input("Do you want to restart at a specific page? (Y/N) ").upper()  
 
 # If restarting append the page number to the base URL and open the output file in append mode.    
 if (restart == "Y"):
