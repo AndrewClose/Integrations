@@ -1,4 +1,0 @@
-This is used to test the delete capability.
-One
-One
-One
