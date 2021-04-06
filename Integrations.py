@@ -34,7 +34,7 @@ else:
     
 restart = input("Do you want to restart at a specific page? (Y/N) ").upper()  
 
-# If restarting append the page number to the base URL and open the output file in append mode.    
+# If restarting, append the page number to the base URL and open the output file in append mode.    
 if (restart == "Y"):
     page = input("What page do you want to restart at? ")
     url = url + "?page=" + str(page)
@@ -66,7 +66,7 @@ while True:
         f.write(integ.get_attribute("innerHTML"))
         f.write("\n")
     
-    # Get the button by xpath
+    # Get the button via xpath
     next_buttons = browser.find_elements_by_xpath("//li[@class='pagination-next ']/a")
    
     if len(next_buttons) < 1:
