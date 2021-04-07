@@ -26,7 +26,7 @@ vendor = input("Enter \"S\" for Slack or \"M\" for Microsoft Teams: ").upper()
 while((vendor != "S") and (vendor != "M")):
     vendor = input("Enter \"S\" for Slack or \"M\" for Microsoft Teams: ").upper()
 
-# Build the base URL used if no restart is required.
+# Build the base URL. Used if no restart is required.
 if vendor == "S":
     url =" https://sourceforge.net/software/product/Slack/integrations/"
 else:
@@ -63,8 +63,7 @@ while True:
     
     # print the content of those h3s
     for integ in integs:
-        f.write(integ.get_attribute("innerHTML"))
-        f.write("\n")
+        f.write(integ.get_attribute("innerHTML")+ "\n")
     
     # Get the button via xpath
     next_buttons = browser.find_elements_by_xpath("//li[@class='pagination-next ']/a")
@@ -75,7 +74,6 @@ while True:
     else:
         # Otherwise go to the next page by sending the button a click
         status = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Next'))).click()
-        print(f"Return status from next webpage: {status}")
 # That's all!
 browser.quit()
 f.close()
